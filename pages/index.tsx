@@ -1,4 +1,5 @@
-import Head from "next/head";
+import Head from "next/head"; 
+
 import {
   Container,
   Heading,
@@ -29,14 +30,17 @@ export default function Home() {
     process.env.NEXT_PUBLIC_PREDICTION_API
   );
 
+    
   const onSubmit = async (event: FormEvent) => {
     
     event.preventDefault();
     console.log("\x1b[33m%s\x1b[0m", "%c >> event.", event);
     console.log("\x1b[33m%s\x1b[0m", "%c >> inputs", inputs);
-    get(
+    const response=get(
       `/predict?imageURL=${inputs.imageURL}`
-    ); 
+    );
+ 
+    
   };
   return (
     <Container>
@@ -70,6 +74,16 @@ export default function Home() {
         </form>
 
         <Box>Prediction result: {data ? data.result : "None"}</Box>
+        <Heading as="h1" marginBottom="5">Input Image </Heading>
+        <Box>
+        <img 
+            src={inputs.imageURL}
+            alt="Input Image"
+            id="imageID"
+            width={500}
+            height={500}
+          />
+          </Box>
       </main>
  
       <footer></footer>
