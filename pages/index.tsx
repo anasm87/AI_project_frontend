@@ -8,6 +8,7 @@ import {
   Input,
   FormLabel,
   Box,
+  Image
 } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
 import useFetch from "use-http";
@@ -74,16 +75,16 @@ export default function Home() {
         </form>
 
         <Box>Prediction result: {data ? data.result : "None"}</Box>
-        <Heading as="h1" marginBottom="5">Input Image </Heading>
-        <Box>
-        <img 
+        <Heading as="h2" marginBottom="5">Input Image </Heading>
+         <div>
+        <Image 
             src={inputs.imageURL}
             alt="Input Image"
             id="imageID"
             width={500}
             height={500}
           />
-          </Box>
+          </div>
       </main>
  
       <footer></footer>
