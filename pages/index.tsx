@@ -12,7 +12,7 @@ import { FormEvent, useState } from "react";
 import useFetch from "use-http";
 export default function Home() {
   const [inputs, setInputs] = useState({
-    imageURL: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Cat.jpeg"   
+    imageURL: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Cat.jpeg",   
   });
 
   const handleOnChange = (
