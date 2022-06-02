@@ -68,7 +68,8 @@ export default function Home() {
           </Button>
         </form>
 
-        <Box>Prediction result: {data ? data.result : "None"}</Box>
+        <Box>Prediction result: {data ? data.prediction : "None"}</Box>
+        <Box>probability : {data ? data.probability : "None"}</Box>
       </main>
 
       <footer></footer>
