@@ -30,12 +30,13 @@ export default function Home() {
   );
 
   const onSubmit = async (event: FormEvent) => {
+    
     event.preventDefault();
     console.log("\x1b[33m%s\x1b[0m", "%c >> event.", event);
     console.log("\x1b[33m%s\x1b[0m", "%c >> inputs", inputs);
     get(
       `/predict?imageURL=${inputs.imageURL}`
-    );
+    ); 
   };
   return (
     <Container>
@@ -70,7 +71,7 @@ export default function Home() {
 
         <Box>Prediction result: {data ? data.result : "None"}</Box>
       </main>
-
+ 
       <footer></footer>
     </Container>
   );
